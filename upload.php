@@ -41,10 +41,13 @@ if ((($_FILES["file"]["type"] == "image/gif")
   elseif ($_FILES["file"]["size"] >= 5120000){
     echo "File exceeds 5MB";    
   }
-else
+elseif ((strlen($extension) > 2) AND ($extension !==("jpg" OR "png" OR "jpeg" OR "gif")) )
   {
-  echo "Invalid file";
+  echo "Oops! Please make sure your file is an image: .jpg .jpeg .png or .gif </br>";
   }
+else {
+  echo "Oops no file";
+} 
 //ensures code is working till this point. #change
 echo "Upload page live";
 ?>

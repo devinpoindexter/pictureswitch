@@ -3,6 +3,17 @@
 	height: auto;
 	display: block;
 	margin:auto;
+	opacity:0.3;
+	filter:alpha(opacity=30);
+	-moz-transition: opacity .3s ease-in;
+    -o-transition: opacity .3s ease-in;
+    -webkit-transition: opacity .3s ease-in;
 
+}
 
+#logo:hover {
+	opacity:1;
+}
+h2 {
+	color:#ffffff;
 }
