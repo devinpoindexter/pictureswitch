@@ -19,7 +19,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
   else
     {
       //displays the uploaded photo to the user. We will need to remove the static file path. #change
-      echo "<img src="."'"."http://localhost:8888/sites/pictureswitch/uploads/" . $_FILES["file"]["name"]."' width='500' height='auto'>";
+      echo "<img src="."'"."http://localhost:8888/sites/pictureswitch/uploads/" . $_FILES["file"]["name"]."' width='100%' height='auto'>";
     //displays info about the file. We really only want to echo the first line eventually. #change
     echo "Upload: " . $_FILES["file"]["name"] . "<br>";
     echo "Type: " . $_FILES["file"]["type"] . "<br>";
