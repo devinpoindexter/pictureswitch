@@ -1,0 +1,48 @@
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+body{ 
+	margin: 0;
+}
+
+header {
+	width:100%;
+	display:block;
+	float:left;
+}
+
+.uploadbtn, .filebtn {
+	background: #3498DB;
+	background-clip: none;
+	border: none;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	color:#ffffff;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    padding: 10px 110px;
+  
+}
+
+.uploadbtn:hover { 
+    background: #2980B9;
+
+}
+
+.filebtn {
+	background: #34495E;
+  padding: 10px 10px;
+}
+
+.filebtn:hover { 
+    background: #2C3E50;
+}
+
+#uploadbox {
+	width:260;
+	display:block;
+	margin: 0 auto;
+}
