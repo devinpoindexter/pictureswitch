@@ -1,7 +1,11 @@
 <?php
+require '../pictureswitch/includes/functions.php';
+date_default_timezone_set("America/Phoenix");
+$datetime = date("Y-m-d H:i:s");
 $allowedExts = array("gif", "jpeg", "jpg", "png");
 $temp = explode(".", $_FILES["file"]["name"]);
-$extension = end($temp);
+$extension = strtolower(end($temp));
+$category = $_POST['category'];
 if ((($_FILES["file"]["type"] == "image/gif")
 || ($_FILES["file"]["type"] == "image/jpeg")
 || ($_FILES["file"]["type"] == "image/jpg")
@@ -18,24 +22,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
     }
   else
     {
-      //displays the uploaded photo to the user. We will need to remove the static file path. #change
-      echo "<img src="."'"."http://localhost:8888/sites/pictureswitch/uploads/" . $_FILES["file"]["name"]."' width='100%' height='auto'>";
-    //displays info about the file. We really only want to echo the first line eventually. #change
-    echo "Upload: " . $_FILES["file"]["name"] . "<br>";
-    echo "Type: " . $_FILES["file"]["type"] . "<br>";
-    echo "Size: " . ($_FILES["file"]["size"] / 5120) . " kB<br>";
-    echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
-
-    if (file_exists("uploads/" . $_FILES["file"]["name"]))
-      {
-      echo $_FILES["file"]["name"] . " already exists. ";
-      }
-    else
-      {
-      move_uploaded_file($_FILES["file"]["tmp_name"],
-      "uploads/" . $_FILES["file"]["name"]);
-      echo "Stored in: " . "uploads/" . $_FILES["file"]["name"];
-      }
+     uploadpicture($category);
     }
   }
   elseif ($_FILES["file"]["size"] >= 5120000){

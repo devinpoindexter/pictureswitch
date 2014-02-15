@@ -12,7 +12,7 @@
         $nextfilenumb = $i-1;
         return $nextfilenumb;
     }
-
+// This function needs to be modified. There will no longer be one uploads file, but numerous category files.
     function getExtension($id) {
         if (file_exists('../pictureswitch/uploads/'.$id."."."jpg")) {
             return ".jpg";
@@ -29,5 +29,27 @@
         else {
             echo "No go";
         }
+    }
+
+    function uploadpicture($catname) {
+         //displays the uploaded photo to the user. We will need to remove the static file path. #change
+      echo "<img src="."'"."http://localhost:8888/sites/pictureswitch/categories/".$catname."/" . $_FILES["file"]["name"]."' width='100%' height='auto'>";
+    //displays info about the file. We really only want to echo the first line eventually. #change
+    echo "Upload: " . $_FILES["file"]["name"] . "<br>";
+    echo "Type: " . $_FILES["file"]["type"] . "<br>";
+    echo "Size: " . ($_FILES["file"]["size"] / 5120) . " kB<br>";
+    echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
+
+    if (file_exists("categories/".$catname."/" . $_FILES["file"]["name"]))
+      {
+      echo $_FILES["file"]["name"] . " already exists. ";
+      }
+    else
+      {
+      move_uploaded_file($_FILES["file"]["tmp_name"],
+      "categories/".$catname."/" . $_FILES["file"]["name"]);
+      echo "Stored in: " . $catname."/" . $_FILES["file"]["name"];
+      }
+
     }
 ?>

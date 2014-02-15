@@ -15,6 +15,15 @@
       <form action="upload.php" method="post"
       enctype="multipart/form-data">
       <input class="filebtn" type="file" name="file" id="file"><br>
+      <select name="category">
+          <option selected="selected" disabled="disabled">--Category--</option>
+          <option value="abstract">Abstract</option>
+          <option value="animals">Animals</option>
+          <option value="cityscapes">Cityscapes</option>
+          <option value="landscapes">Landscapes</option>
+          <option value="other">Other</option>
+      </select>
+  
       <button class="uploadbtn" type="submit" name="submit" value="Submit">Submit</button>
       </form>
     </div>
