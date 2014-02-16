@@ -8,8 +8,13 @@ $login = new Login();
 if($login->isLoggedIn()) {
   echo "<html><head> <link rel='stylesheet' type='text/css' href='../pictureswitch/css/admin.css'>";
   
-  if (isset($_POST['category'])) {
-  	echo "set";
+  if (isset($_POST['decision'])) {
+  	$decisionid = $_POST['idfield'];
+  	$decisionyn = $_POST['decision'];
+  	$query = "UPDATE pictures 
+SET approved = '$decisionyn' 
+WHERE id = '$decisionid' ";
+mysqli_query($dbconnect, $query);
   }
 
 
@@ -36,11 +41,11 @@ while ($i < $numUnApproved) {
 	echo "<div class='approvalbox'><img src='".$paths[$i]."'>";
 	echo "<form class='approvalform' method='post'
       enctype='multipart/form-data'>
-      <input type='hidden' value='".$ids[$i]."'>
+      <input type='hidden' name='idfield' value='".$ids[$i]."'>
       <button type='submit' name='decision' value='2'>Approve</button>
       </form><form class='approvalform' method='post'
       enctype='multipart/form-data'>
-       <input type='hidden' value='".$ids[$i]."'>
+       <input type='hidden' name='idfield' value='".$ids[$i]."'>
       <button type='submit' name='decision' value='1'>Deny</button>
       </form>";
 	echo "</div>";
