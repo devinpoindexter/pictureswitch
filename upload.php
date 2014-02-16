@@ -1,5 +1,6 @@
 <?php
 require '../pictureswitch/includes/functions.php';
+require '../pictureswitch/includes/dbconnect.php';
 date_default_timezone_set("America/Phoenix");
 $datetime = date("Y-m-d H:i:s");
 $allowedExts = array("gif", "jpeg", "jpg", "png");
@@ -35,6 +36,12 @@ elseif ((strlen($extension) > 2) AND ($extension !==("jpg" OR "png" OR "jpeg" OR
 else {
   echo "Oops no file";
 } 
-//ensures code is working till this point. #change
-echo "Upload page live";
+// set some db variables and insert record of new image into db
+$path = "categories/".$category."/" . $_FILES["file"]["name"];
+$filename = $_FILES["file"]["name"];
+$sqlinsert = "INSERT INTO pictures (filepath, filename, category, upload_date, author) VALUES ('$path', '$filename', '$category', '$datetime', 'noauthor')";
+if (!mysqli_query($dbconnect, $sqlinsert)) {
+  echo "error inserting query";
+}
+else {echo "1 record inserted";}
 ?>
