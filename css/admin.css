@@ -1,0 +1,23 @@
+#header {
+	width:100%;
+	height: 100px;
+}
+
+.approvalbox {
+	max-width: 400px;
+	height:250px;
+	margin: 10px;
+	display:block;
+	float: left;
+}
+
+.approvalbox img{
+	height: 200px;
+	width: auto;
+}
+
+.approvalform {
+	max-width:70px;
+	display:inline-block;
+	float:left;
+}
