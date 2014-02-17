@@ -81,7 +81,7 @@ class Login
     else
       { return false; }
   }
-
+// ensures that both username and password have between 5 and 12 chars and are a-z, A-Z, or 0-9
   public function isDataValid()
   {
     return (preg_match('/^[a-zA-Z0-9]{5,12}$/',$this->_username) && preg_match('/^[a-zA-Z0-9]{5,12}$/',$this->_password))? 1 : 0;
