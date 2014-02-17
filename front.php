@@ -39,11 +39,11 @@ echo "<div id='header'><h1>Photo Approval Page</h1><p>There are currently <b>".$
 $i=0;
 while ($i < $numUnApproved) {
 	echo "<div class='approvalbox'><img src='".$paths[$i]."'>";
-	echo "<form class='approvalform' method='post'
+	echo "<form class='approvalform approve' method='post'
       enctype='multipart/form-data'>
       <input type='hidden' name='idfield' value='".$ids[$i]."'>
       <button type='submit' name='decision' value='2'>Approve</button>
-      </form><form class='approvalform' method='post'
+      </form><form class='approvalform deny' method='post'
       enctype='multipart/form-data'>
        <input type='hidden' name='idfield' value='".$ids[$i]."'>
       <button type='submit' name='decision' value='1'>Deny</button>

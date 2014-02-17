@@ -21,6 +21,7 @@
           <option value="animals">Animals</option>
           <option value="cityscapes">Cityscapes</option>
           <option value="landscapes">Landscapes</option>
+          <option value="people">People</option>
           <option value="other">Other</option>
       </select>
   
