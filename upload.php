@@ -39,9 +39,15 @@ else {
 // set some db variables and insert record of new image into db
 $path = "categories/".$category."/" . $_FILES["file"]["name"];
 $filename = $_FILES["file"]["name"];
-$sqlinsert = "INSERT INTO pictures (filepath, filename, category, upload_date, author) VALUES ('$path', '$filename', '$category', '$datetime', 'noauthor')";
-if (!mysqli_query($dbconnect, $sqlinsert)) {
-  echo "error inserting query";
+if (isset($category) AND isset($filename)){
+   $sqlinsert = "INSERT INTO pictures (filepath, filename, category, upload_date, author) VALUES ('$path', '$filename', '$category', '$datetime', 'noauthor')";
+  if (!mysqli_query($dbconnect, $sqlinsert)) {
+    echo "error inserting query";
+  }
+  else {echo "1 record inserted";}
 }
-else {echo "1 record inserted";}
+else {
+  echo "Please select a file and category.";
+}
+
 ?>
