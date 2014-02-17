@@ -1,11 +1,37 @@
 <?php
 require '../pictureswitch/includes/dbconnect.php';
 
-$sqlget = "SELECT * FROM pictures WHERE approved ='0' ORDER BY RAND() LIMIT 1";
+$filename = "01616_overview_1920x1200.jpg";
+
+$sqlget = "SELECT * FROM pictures WHERE filename ='$filename' ORDER BY RAND() LIMIT 1";
 $sqldata = mysqli_query($dbconnect, $sqlget) or die('error getting data');
 
-while($row = mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
-	echo $row['filepath'];
+
+
+if($row = mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
+	if ($row['filename'] !== '') {
+		$dbfilename = $row['filename'];
+	}
 }
+
+
+function generateRandomString($length) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $randomString;
+}
+
+if (isset($dbfilename)) {
+	$newfilename = generateRandomString(7);
+}
+else {
+	$newfilename = $filename;
+}
+
+echo $newfilename;
+
 
 ?>

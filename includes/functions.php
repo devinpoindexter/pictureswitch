@@ -37,7 +37,7 @@
     //displays info about the file. We really only want to echo the first line eventually. #change
     echo "Upload: " . $_FILES["file"]["name"] . "<br>";
     echo "Type: " . $_FILES["file"]["type"] . "<br>";
-    echo "Size: " . ($_FILES["file"]["size"] / 5120) . " kB<br>";
+    echo "Size: " . ($_FILES["file"]["size"] / 1000) . " kB<br>";
     echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
 
     if (file_exists("categories/".$catname."/" . $_FILES["file"]["name"]))
