@@ -26,7 +26,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
   }
   elseif (isset($category) AND isset($_FILES["file"]["name"]))
     {
-     uploadpicture($category);
+     uploadpicture($category,$extension);
     }
   }
   elseif ($_FILES["file"]["size"] >= 5120000){
@@ -40,7 +40,7 @@ else {
   echo "Oops no file";
 } 
 // set some db variables and insert record of new image into db
-$path = "categories/".$category."/" . $_FILES["file"]["name"];
+$path = "categories/".$category."/" .$randompath.'.'.$extension;
 $filename = $_FILES["file"]["name"];
 if (isset($category) AND isset($filename) AND preg_match("/^[a-zA-Z0-9_-]{1,40}$/",$temp[0]) AND !isset($temp[2])){
    $sqlinsert = "INSERT INTO pictures (filepath, filename, category, upload_date, author) VALUES ('$path', '$filename', '$category', '$datetime', 'noauthor')";
