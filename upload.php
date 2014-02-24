@@ -1,6 +1,11 @@
+<html>
+<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../pictureswitch/css/home.css">
+  <link rel="stylesheet" type="text/css" href="../pictureswitch/css/core.css">
 <?php
 require '../pictureswitch/includes/functions.php';
 require '../pictureswitch/includes/dbconnect.php';
+include '../pictureswitch/includes/menubar.php';
 date_default_timezone_set("America/Phoenix");
 $datetime = date("Y-m-d H:i:s");
 $allowedExts = array("gif", "jpeg", "jpg", "png");
@@ -37,7 +42,7 @@ elseif ((strlen($extension) > 2) AND ($extension !==("jpg" OR "png" OR "jpeg" OR
   echo "Oops! Please make sure your file is an image: .jpg .jpeg .png or .gif </br>";
   }
 else {
-  echo "Oops no file";
+  echo "No file selected. </br>";
 } 
 // set some db variables and insert record of new image into db
 $path = "categories/".$category."/" .$randompath.'.'.$extension;
@@ -54,3 +59,4 @@ else {
 }
 echo $temp[0];
 ?>
+</html>

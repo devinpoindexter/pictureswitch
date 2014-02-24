@@ -1,21 +1,15 @@
 <html>
-<head>
-  <link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="../pictureswitch/css/home.css">
-  <link rel="stylesheet" type="text/css" href="../pictureswitch/css/core.css">
-</head>
+  <?php include '../pictureswitch/includes/head.php';?>
 <body>
-<header>
-<div id="logo"><img src="../pictureswitch/assets/pslogo1.png"></div>
-</header>
+
 <div class="section">
   <div id="centerbox">
   <h2>Upload Your Photo:</h2>
     <div id="uploadbox">
       <form action="upload.php" method="post"
       enctype="multipart/form-data">
-      <input class="filebtn" type="file" name="file" id="file"><br>
-      <select name="category">
+      <input class="filebtn" type="file" name="file" id="file" required><br>
+      <select name="category" required>
           <option selected="selected" disabled="disabled">--Category--</option>
           <option value="abstract">Abstract</option>
           <option value="animals">Animals</option>

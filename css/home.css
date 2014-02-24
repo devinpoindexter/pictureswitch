@@ -3,7 +3,7 @@
 	height: auto;
 	display: block;
 	margin:auto;
-	opacity:0.3;
+	opacity:0.6;
 	filter:alpha(opacity=30);
 	-moz-transition: opacity .3s ease-in;
     -o-transition: opacity .3s ease-in;

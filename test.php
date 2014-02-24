@@ -1,4 +1,6 @@
 <?php
+
+// want to make file path random string with the id appended to end, filename stay same
 require '../pictureswitch/includes/dbconnect.php';
 
 $filename = "01616_overview_1920x1200.jpg";

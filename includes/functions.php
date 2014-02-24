@@ -79,7 +79,7 @@ $randompath = createnewfilepath();
       {
       move_uploaded_file($_FILES["file"]["tmp_name"],
       "categories/".$catname."/" . $newfilepath);
-      echo "Stored in: " . $catname."/" . $newfilepath;
+      echo "Stored in: " . $catname."/" . $newfilepath."</br>";
       }
 
     }
