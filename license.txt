@@ -1,0 +1,20 @@
+// Author: Devin Poindexter
+
+
+//////////////////////////////////
+License:
+This project may not be used, copied, reproduced, or reimplemented in whole or in part unless you meet all of the following conditions:
+	- You are only using it for educational purposes
+	- You will not copy more than 10 lines of code
+	- Your will not use it for monetary gain
+	- You will not redistribute it
+	- You are not trying to duplicate the site, content, or concept
+	- You cite me as a source in your work
+	- You notify me of any use 
+
+//////////////////////////////////
+I do support sharing of ideas and helping others learn, however I may still be developing the project further and I want to ensure somebody doesn't try to take the idea while I am working on other projects. I may eventually finish the project and give free license, but have chosen not to do so at this time.
+If you have any questions feel free to message me at:
+devin.poindexter(at)gmail(dot).com
+
+	
